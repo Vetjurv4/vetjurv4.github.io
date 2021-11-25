@@ -7,7 +7,9 @@
     border-radius: 0px;
 }
 
-
+.container{
+	background: rgba(255, 255, 255, 0.3);
+}
 
 
 /*-------- don't use this css its for only top margin   ----------------------*/
@@ -261,3 +263,12 @@ button {
   transform: scale(1.3);
 }
 
+.footer{
+	width: 100%;
+	background-color: #000000;
+}
+/* Demo purposes only */
+body {
+  background-image: url('../img/main_slide1.jpg');
+  background-size:cover;
+}
