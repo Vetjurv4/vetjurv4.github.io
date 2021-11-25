@@ -128,7 +128,7 @@ button {
   list-style: none;
 }
 
-[rol="low-indicator"] {
+.low-indicator{
   display: block;
   height: 100%;
   width: 1%;
@@ -260,8 +260,4 @@ button {
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
-/* Demo purposes only */
-body {
-  background-image: url('../img/main_slide1.jpg');
-  background-size:cover;
-}
+

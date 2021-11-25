@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
   var $slideShow      =  $(".slide-show"),
       $slideImg       =  $(".slide-img"),
       $slideItem      =  $(".slide-item"),
-      $indicator      =  $("[rol='low-indicator']"),
+      $indicator      =  $(".low-indicator"),
       slideLoopCount  =  0,
       slideOffset     =  0;
         
