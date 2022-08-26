@@ -54,6 +54,11 @@ jQuery(document).ready(function(){
      $slideShow.removeClass("blur-slide");
     }
   }
+  
+  $('.nav>li').click(function(){
+    $('.active').toggleClass("active");
+    $(this).toggleClass("active");
+})
   //  end slidefunctions
 });
 
