@@ -272,6 +272,11 @@ body {
   transition: 0.3s;
   border: none;
 }
+
+.card img{
+  width: 100%;
+  max-height: 20vh;
+}
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
 }
