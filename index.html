@@ -27,12 +27,12 @@ window.onscroll = () => {
   var current = "";
 
   console.log(sections);
-  sections.forEach((section) => {
+  for(let section of sections){
     const sectionTop = section.offsetTop;
     if (pageYOffset >= sectionTop - 60) {
       current = section.getAttribute("id"); }
       console.log(current);
-  });
+  };
 
   navLi.forEach((li) => {
     li.classList.remove("active");
