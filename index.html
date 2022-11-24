@@ -23,6 +23,8 @@
 <script>
   const sections = document.getElementsByTagName("section");
 const navLi = document.querySelectorAll("nav ul li");
+
+console.log(navLi);
 window.onscroll = () => {
   var current = "";
 
@@ -31,7 +33,6 @@ window.onscroll = () => {
     const sectionTop = section.offsetTop;
     if (pageYOffset >= sectionTop - 60) {
       current = section.getAttribute("id"); }
-      console.log(current);
   };
 
   navLi.forEach((li) => {
