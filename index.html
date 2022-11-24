@@ -25,8 +25,8 @@
 const navLi = document.querySelectorAll("nav ul li");
 window.onscroll = () => {
   var current = "";
-  console.log("scrolling");
 
+  console.log(sections);
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     if (pageYOffset >= sectionTop - 60) {
