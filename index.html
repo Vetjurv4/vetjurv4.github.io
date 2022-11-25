@@ -1,48 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Vetjurv4 Profile</title>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/slick.css">
-	<script src="js/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+    <script src="js/slick.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link href="css/style.css" rel="stylesheet">
-	<script src="js/myjs.js" ></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/myjs.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
 
-<script>
-  const sections = document.getElementsByTagName("section");
-const navLi = document.querySelector("nav ul li");
+    <script>
+      const sections = document.getElementsByTagName("section");
+      const navLi = document.getElementById("navlist").querySelectorAll("li"); // Array.from(document.querySelectorAll("ul>li"));
 
-console.log(navLi);
-window.onscroll = () => {
-  var current = "";
+      window.onscroll = () => {
+        var current = "";
 
-  console.log(sections);
-  for(let section of sections){
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 60) {
-      current = section.getAttribute("id"); }
-  };
+        for (let section of sections) {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 60) {
+            current = section.getAttribute("id");
+          }
+        }
 
-  navLi.forEach((li) => {
-    li.classList.remove("active");
-    if (li.classList.contains(current)) {
-      li.classList.add("active");
-    }
-  });
-};
-</script>
+        navLi.forEach((li) => {
+          // if(li.classList.contains("active") && !(li.classList.contains(current))){
+          //   li.classList.remove("active");
+            
+          //   console.log(li);
+          // }
+          
+          console.log(current);
+          if (li.classList.contains(current)) {
+            console.log("added "+li);
+            li.classList.add("active");
+          } 
+        });
+      };
+    </script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,7 +74,12 @@ window.onscroll = () => {
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-2">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar-collapse-2"
+          >
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -62,118 +87,221 @@ window.onscroll = () => {
           </button>
           <a class="navbar-brand" href="#">Velile Vamba Profile Page</a>
         </div>
-     <div class="collapse navbar-collapse" id="navbar-collapse-2">
+        <div class="collapse navbar-collapse" id="navlist">
           <ul class="nav navbar-nav navbar-right">
-            <li class="home active"><a href="#" >Home</a></li>
+            <li class="home active"><a href="#">Home</a></li>
             <li class="about"><a href="#about">About</a></li>
             <li class="skills"><a href="#skills">Skills </a></li>
             <li class="projects"><a href="#projects">Projects Profile</a></li>
             <li class="contacts"><a href="#contacts">Contact</a></li>
           </ul>
-          
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav><!-- /.navbar -->
-<article class="slide col-md-10 col-md-offset-1	">
-	  <div class="slide-show ">
-		<div class="slide-item"> <img class="slide-img" src="img/main_slide1.jpg" alt="slide 1 picture"></div>
-		<div class="slide-item"> <img class="slide-img" src="img/slide5.jpeg" alt="slide 2 picture"></div>
-		<div class="slide-item"> <img class="slide-img" src="img/slide2.jpg" alt="slide 3 picture"></div>
-	  </div>
-	  <div class="slide-text">
-		<div class="half a-center">
-		  <h2 class="alide-title">“Listen to your customers, not your competitors.”<span class="small" style="color:white;"> — Joel Spolsky </span> </h2>
-		</div>
-		<ul class="slide-indicator">
-		  <li class="indicator-item"><a class="low-indicator"></a></li>
-		  <li class="indicator-item"><a class="low-indicator"></a></li>
-		  <li class="indicator-item"><a class="low-indicator"></a></li>
-		</ul>
-	  </div>
-</article>
-<section id="about" class="aboutContainer col-xs-12 col-md-10 col-md-offset-1  text-center" style="margin-right:10px;">
-	<h1 class="text-center" >About</h1>
-	<p> Passionate and enthusiastic self-taught programmer with a BSc in Computer Science & Informatics from the University of Johannesburg and an experience as a developer. 
-	Adept with object-orientated programming languages, as well as algorithms, data structures and databases. Enjoys collaborating with colleagues and building cultures of cross-functional working to provide great success of projects. </p>
-</section>
-<section id="skills" class="aboutContainer col-xs-12 col-md-10 col-md-offset-1  text-center" id="Skills" style="margin-right:10px;">
-<h1 class="text-center" >Skills </h1>
-<div class="btn-group" role="group" aria-label="Basic example">
-<button type="button" class="btn btn-primary col-sm-3">Java</button>
-<button type="button" class="btn btn-secondary col-sm-3">PHP</button>
-<button type="button" class="btn btn-success col-sm-3">C++</button>
-<button type="button" class="btn btn-danger col-sm-3">SQL</button>
-<button type="button" class="btn btn-warning col-sm-3">HTML/5</button>
-<button type="button" class="btn btn-info col-sm-3">CSS/3</button> 
-</div>
-</section>
-
-<section id="projects" class="aboutContainer col-xs-12 col-md-10 col-md-offset-1  text-center" style="margin-right:10px;">
-	<h1 class="text-center" >Projects</h1>
-  <div class="container">
-    <div class="card-columns row">
-      <div class="card col-md-4">
-        <a href="https://vetjurv4.github.io/letstalk/" target="_blank">
-        <img class="card-img-top" src="img/letstalk.png" alt="Card image cap">
-        <div class="card-body">
-          <h3 class="card-title"  style="color:white;">App Info Website</h3>
-          <p class="card-text"  style="color:white;">
-            Let’s Talk Batho Pele app enables digital communication of all community citizens, informal traders and SMEs to apply for a service, request report and be informed about things happenning at their local wards at the comfort of their own home. So I built this to advertise and give information about the App.
-          </p>
-      </div>
-        </a>
-      </div>
-      <div class="card col-md-4">
-        <a href="https://vetjurv4.github.io/company-profile-template/"  target="_blank">
-        <img class="card-img-top" src="img/fords.png" alt="Card image cap">
-        <div class="card-body">
-          <h3 class="card-title" style="color:white;">Company Profile website</h3>
-          <p class="card-text" style="color:white;">This website is designed using a combination of multiple section components from free templates that were found online. This was one of the templates I designed for some finance company but a better design was chosen, so feel free to contribute or use it.</p>
-          
         </div>
-        </a>
+        <!-- /.navbar-collapse -->
       </div>
-      <div class="card col-md-4">
-        <a href="https://vetjurv4.github.io/tumik-template/" target="_blank">
-        <img class="card-img-top" src="img/tumik.png" alt="Card image cap">
-        <div class="card-body">
-          <h3 class="card-title" style="color:white;">Printing Company Website</h3>
-          <p class="card-text" style="color:white;">Tumik prints was a service orientated company that provides advance digital printing services to enhance efficiency. I built this to advertise and give information about the company which has now closed down leading to this website to be taken down and this is just a demo for profile sake.</p>
-          
+      <!-- /.container -->
+    </nav>
+    <!-- /.navbar -->
+    <article class="slide col-md-10 col-md-offset-1">
+      <div class="slide-show">
+        <div class="slide-item">
+          <img
+            class="slide-img"
+            src="img/main_slide1.jpg"
+            alt="slide 1 picture"
+          />
         </div>
-        </a>
+        <div class="slide-item">
+          <img class="slide-img" src="img/slide5.jpeg" alt="slide 2 picture" />
+        </div>
+        <div class="slide-item">
+          <img class="slide-img" src="img/slide2.jpg" alt="slide 3 picture" />
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="col-xs-12 col-md-10 col-md-offset-1 aboutContainer" id="contacts">
-
-<figure class="snip1344  col-xs-12 col-md-4"><img src="img/vetjurv4.jpg" alt="profile-sample6" class="background">
-  <figcaption>
-    <h3>email:<span><a href="mailto:velly.vamba@gmail.com"  target="_blank">velly.vamba@gmail.com</a></span></h3>
-    
-  </figcaption>
-</figure>
-<figure class="snip1344  col-xs-12 col-md-4"><img src="img/vetjurv4.jpg" alt="profile-sample6" class="background"><img src="img/vetjurv4.jpg" alt="profile-sample6" class="profile">
-  <figcaption>
-    <h3>Velile Vamba<span>Web developer</span></h3>
-    <div class="icons"><a href="https://twitter.com/vetjurv4" target="_blank"><i class="fab fa-twitter"></i></a><a href="https://github.com/Vetjurv4" target="_blank"><i class="fab fa-github"></i></a><a href="https://za.linkedin.com/in/velile-vamba" target="_blank"> <i class="fab fa-linkedin"></i></a></div>
-  </figcaption>
-
-</figure>
-<figure class="snip1344  col-xs-12 col-md-4"><img src="img/vetjurv4.jpg" alt="profile-sample6" class="background">
-  <figcaption>
-    <h3>cell number:<span>0783420562</span></h3>  
- </figcaption>
-
-</figure>
-</section>
-  <section class="footer">
-      <p class="navbar-text pull-left">© <script>document.write(new Date().getFullYear())</script> site built by <a href="https://twitter.com/vetjurv4" target="_blank">VetjurV4</a> 
-          for profile sake
+      <div class="slide-text">
+        <div class="half a-center">
+          <h2 class="alide-title">
+            “Listen to your customers, not your competitors.”<span
+              class="small"
+              style="color: white"
+            >
+              — Joel Spolsky
+            </span>
+          </h2>
+        </div>
+        <ul class="slide-indicator">
+          <li class="indicator-item"><a class="low-indicator"></a></li>
+          <li class="indicator-item"><a class="low-indicator"></a></li>
+          <li class="indicator-item"><a class="low-indicator"></a></li>
+        </ul>
+      </div>
+    </article>
+    <section
+      id="about"
+      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center"
+      style="margin-right: 10px"
+    >
+      <h1 class="text-center">About</h1>
+      <p>
+        Passionate and enthusiastic self-taught programmer with a BSc in
+        Computer Science & Informatics from the University of Johannesburg and
+        an experience as a developer. Adept with object-orientated programming
+        languages, as well as algorithms, data structures and databases. Enjoys
+        collaborating with colleagues and building cultures of cross-functional
+        working to provide great success of projects.
       </p>
-  </section>
+    </section>
+    <section
+      id="skills"
+      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center"
+      id="Skills"
+      style="margin-right: 10px"
+    >
+      <h1 class="text-center">Skills</h1>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary col-sm-3">Java</button>
+        <button type="button" class="btn btn-secondary col-sm-3">PHP</button>
+        <button type="button" class="btn btn-success col-sm-3">C++</button>
+        <button type="button" class="btn btn-danger col-sm-3">SQL</button>
+        <button type="button" class="btn btn-warning col-sm-3">HTML/5</button>
+        <button type="button" class="btn btn-info col-sm-3">CSS/3</button>
+      </div>
+    </section>
+
+    <section
+      id="projects"
+      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center"
+      style="margin-right: 10px"
+    >
+      <h1 class="text-center">Projects</h1>
+      <div class="container">
+        <div class="card-columns row">
+          <div class="card col-md-4">
+            <a href="https://vetjurv4.github.io/letstalk/" target="_blank">
+              <img
+                class="card-img-top"
+                src="img/letstalk.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title" style="color: white">
+                  App Info Website
+                </h3>
+                <p class="card-text" style="color: white">
+                  Let’s Talk Batho Pele app enables digital communication of all
+                  community citizens, informal traders and SMEs to apply for a
+                  service, request report and be informed about things
+                  happenning at their local wards at the comfort of their own
+                  home. So I built this to advertise and give information about
+                  the App.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="card col-md-4">
+            <a
+              href="https://vetjurv4.github.io/company-profile-template/"
+              target="_blank"
+            >
+              <img
+                class="card-img-top"
+                src="img/fords.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title" style="color: white">
+                  Company Profile website
+                </h3>
+                <p class="card-text" style="color: white">
+                  This website is designed using a combination of multiple
+                  section components from free templates that were found online.
+                  This was one of the templates I designed for some finance
+                  company but a better design was chosen, so feel free to
+                  contribute or use it.
+                </p>
+              </div>
+            </a>
+          </div>
+          <div class="card col-md-4">
+            <a
+              href="https://vetjurv4.github.io/tumik-template/"
+              target="_blank"
+            >
+              <img
+                class="card-img-top"
+                src="img/tumik.png"
+                alt="Card image cap"
+              />
+              <div class="card-body">
+                <h3 class="card-title" style="color: white">
+                  Printing Company Website
+                </h3>
+                <p class="card-text" style="color: white">
+                  Tumik prints was a service orientated company that provides
+                  advance digital printing services to enhance efficiency. I
+                  built this to advertise and give information about the company
+                  which has now closed down leading to this website to be taken
+                  down and this is just a demo for profile sake.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="col-xs-12 col-md-10 col-md-offset-1 aboutContainer"
+      id="contacts"
+    >
+      <figure class="snip1344 col-xs-12 col-md-4">
+        <img src="img/vetjurv4.jpg" alt="profile-sample6" class="background" />
+        <figcaption>
+          <h3>
+            email:<span
+              ><a href="mailto:velly.vamba@gmail.com" target="_blank"
+                >velly.vamba@gmail.com</a
+              ></span
+            >
+          </h3>
+        </figcaption>
+      </figure>
+      <figure class="snip1344 col-xs-12 col-md-4">
+        <img
+          src="img/vetjurv4.jpg"
+          alt="profile-sample6"
+          class="background"
+        /><img src="img/vetjurv4.jpg" alt="profile-sample6" class="profile" />
+        <figcaption>
+          <h3>Velile Vamba<span>Web developer</span></h3>
+          <div class="icons">
+            <a href="https://twitter.com/vetjurv4" target="_blank"
+              ><i class="fab fa-twitter"></i></a
+            ><a href="https://github.com/Vetjurv4" target="_blank"
+              ><i class="fab fa-github"></i></a
+            ><a href="https://za.linkedin.com/in/velile-vamba" target="_blank">
+              <i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </figcaption>
+      </figure>
+      <figure class="snip1344 col-xs-12 col-md-4">
+        <img src="img/vetjurv4.jpg" alt="profile-sample6" class="background" />
+        <figcaption>
+          <h3>cell number:<span>0783420562</span></h3>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="footer">
+      <p class="navbar-text pull-left">
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        site built by
+        <a href="https://twitter.com/vetjurv4" target="_blank">VetjurV4</a>
+        for profile sake
+      </p>
+    </section>
+    
   </body>
 </html>
-
