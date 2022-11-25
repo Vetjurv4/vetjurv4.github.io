@@ -34,35 +34,6 @@
       crossorigin="anonymous"
     />
 
-    <script>
-      const sections = document.getElementsByTagName("section");
-      const navLi = document.getElementById("navlist").querySelectorAll("li"); // Array.from(document.querySelectorAll("ul>li"));
-
-      window.onscroll = () => {
-        var current = "";
-
-        for (let section of sections) {
-          const sectionTop = section.offsetTop;
-          if (pageYOffset >= sectionTop - 60) {
-            current = section.getAttribute("id");
-          }
-        }
-
-        navLi.forEach((li) => {
-          // if(li.classList.contains("active") && !(li.classList.contains(current))){
-          //   li.classList.remove("active");
-            
-          //   console.log(li);
-          // }
-          
-          console.log(current);
-          if (li.classList.contains(current)) {
-            console.log("added "+li);
-            li.classList.add("active");
-          } 
-        });
-      };
-    </script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -137,10 +108,10 @@
     </article>
     <section
       id="about"
-      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center"
-      style="margin-right: 10px"
+      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center mt-4"
+      style="margin-right: 10px;"
     >
-      <h1 class="text-center">About</h1>
+      <h1 class="text-center" style="margin-top: 50px;">About</h1>
       <p>
         Passionate and enthusiastic self-taught programmer with a BSc in
         Computer Science & Informatics from the University of Johannesburg and
@@ -152,11 +123,11 @@
     </section>
     <section
       id="skills"
-      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center"
+      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center mt-4"
       id="Skills"
       style="margin-right: 10px"
     >
-      <h1 class="text-center">Skills</h1>
+      <h1 class="text-center" style="margin-top: 50px;">Skills</h1>
       <div class="btn-group" role="group" aria-label="Basic example">
         <button type="button" class="btn btn-primary col-sm-3">Java</button>
         <button type="button" class="btn btn-secondary col-sm-3">PHP</button>
@@ -169,10 +140,10 @@
 
     <section
       id="projects"
-      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center"
+      class="aboutContainer col-xs-12 col-md-10 col-md-offset-1 text-center mt-4"
       style="margin-right: 10px"
     >
-      <h1 class="text-center">Projects</h1>
+      <h1 class="text-center" style="margin-top: 50px;">Projects</h1>
       <div class="container">
         <div class="card-columns row">
           <div class="card col-md-4">
@@ -250,7 +221,7 @@
     </section>
 
     <section
-      class="col-xs-12 col-md-10 col-md-offset-1 aboutContainer"
+      class="col-xs-12 col-md-10 col-md-offset-1 aboutContainer mt-4"
       id="contacts"
     >
       <figure class="snip1344 col-xs-12 col-md-4">
@@ -303,5 +274,34 @@
       </p>
     </section>
     
+    <script>
+      const sections = document.getElementsByTagName("section");
+      const navLi = document.getElementById("navlist").querySelectorAll("li"); // Array.from(document.querySelectorAll("ul>li"));
+     
+      window.onscroll = () => {
+        let current = "";
+
+        for (let section of sections) {
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 60) {
+            current = section.getAttribute("id") !== null?section.getAttribute("id"):current;
+          console.log(current);
+          }
+        }
+
+        navLi.forEach((li) => {
+          if(li.classList.contains("active") && !(li.classList.contains(current))){
+            li.classList.remove("active");
+            
+            console.log(li);
+          }
+          
+          if (li.classList.contains(current)) {
+            console.log("added "+li);
+            li.classList.add("active");
+          } 
+        });
+      };
+    </script>
   </body>
 </html>
